@@ -27,7 +27,7 @@
     <entity name="solrTest" 
     	pk="solrID" 
     	query="select * from solrTest" 
-    	deltaImportQuery="select * from solrTest where solrID'${dih.delta.solrID}'" 
+    	deltaImportQuery="select * from solrTest where solrID = '${dih.delta.solrID}'" 
        	deltaQuery="select solrID from solrTest where updateTime > '${dataimporter.last_index_time}'"/>
         	
       <field column="solrID" name="solrID"/>  
