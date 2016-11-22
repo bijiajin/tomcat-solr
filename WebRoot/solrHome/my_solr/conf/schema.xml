@@ -50,7 +50,7 @@
   <!-- field name="content_test" type="text_general" indexed="true" stored="true" multiValued="true"/-->
   
   <field name="solrID" type="string" required="true" indexed="true" stored="true" multiValued="false"/>
-  <field name="context" type="string" indexed="false" stored="true" multiValued="false"/>
+  <field name="context" type="string" indexed="true" stored="true" multiValued="false"/>
   <field name="updateTime" type="date" indexed="false" stored="true" multiValued="false"/>
   
   <!-- attribute "name" is the name of this schema and is only used for display purposes.
