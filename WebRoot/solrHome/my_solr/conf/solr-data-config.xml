@@ -33,6 +33,7 @@
       <field column="solrID" name="solrID"/>  
 　　　    <field column="context" name="context"/>  
       <field column="updateTime" name="updateTime"/> 
+      <field column="sort" name="sort"/> 
       
   </document>
 </dataConfig>
