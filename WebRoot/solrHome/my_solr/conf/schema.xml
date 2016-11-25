@@ -50,7 +50,7 @@
   <!-- field name="content_test" type="text_general" indexed="true" stored="true" multiValued="true"/-->
   
   <field name="solrID" type="string" required="true" indexed="true" stored="true" multiValued="false"/>
-  <field name="context" type="string" indexed="true" stored="true" multiValued="false"/>
+  <field name="context" type="text_ik" indexed="true" stored="true" multiValued="false"/>
   <field name="updateTime" type="date" indexed="true" stored="true" multiValued="false"/>
   <field name="sort" type="int" indexed="true" stored="true" multiValued="false"/>
   
@@ -1133,5 +1133,13 @@
        <str name="paramkey">param value</str>
      </similarity>
     -->
-
+    
+    <!-- IKAnalyzer中文分词器.如果版本与solr对应不上,会报抽象方法错误 -->
+	<fieldType name="text_ik" class="solr.TextField">
+	    <!--索引时候的分词器-->
+		<analyzer type="index" isMaxWordLength="false" class="org.wltea.analyzer.lucene.IKAnalyzer"/>
+		<!--查询时候的分词器-->
+		<analyzer type="query" isMaxWordLength="true" class="org.wltea.analyzer.lucene.IKAnalyzer"/>
+	</fieldType>
+	
 </schema>
